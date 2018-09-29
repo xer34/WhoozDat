@@ -7,6 +7,8 @@ who dat is?
 A facial recognition web app that allows users to upload a picture of an actor in a movie they are watching, and recieve the name of the actor and other movies they have been in.
 
 #Initial Designs
+![alt text](assets/images/landing.jpg)
+![alt text](assets/images/result.jpg)
 
 
 #Team Members & Roles
