@@ -26,6 +26,26 @@
             margin-bottom: 10px;
 
         }
+        p {
+        
+        height: 50%;
+        display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+        }
+
+
+
+    img {
+        
+        height: 50%;
+        display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;;
+        }
         </style>
 </head>
 
@@ -39,6 +59,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <div>
         <h1><span id="actorDump">Text Goes Here</span></h1>
+        <div id="picDump">
+
+
+        </div>
     </div>
 
 
@@ -48,6 +72,7 @@
 
         function hideStuff() {
             $("#successful").hide()
+            $("#actorDump").hide()
         }
 
         //--------------------------------------------------------------------//
@@ -94,8 +119,25 @@
                         app.models.predict("e466caa0619f444ab97497640cefc4dc", downloadURL).then(
                             function (response) {
                                 console.log(response)
+
+                                // Creating and storing a div tag
+                                var celebDiv = $("<div>");
+
+                                // Creating and storing an image tag
+                                var celebImg = $("<img class='celebPic'>");
+                                var celebText = $("<p>").text("We are " + ((response.outputs[0].data.regions[0].data.face.identity.concepts[0].value) * 100).toFixed(1) + "% sure it's " + response.outputs[0].data.regions[0].data.face.identity.concepts[0].name)
+
+                                // Setting the src attribute of the image to a property pulled off the result item
+                                celebImg.attr("src", downloadURL);
+
+                                // Appending the paragraph and image tag to the div
+                                celebDiv.append(celebText)
+                                celebDiv.prepend(celebImg);
                                 $("#successful").hide()
-                                $("#actorDump").text("We are " + ((response.outputs[0].data.regions[0].data.face.identity.concepts[0].value) * 100).toFixed(1) + "% sure it's " + response.outputs[0].data.regions[0].data.face.identity.concepts[0].name)
+                                // Prependng the div to the HTML page in the 
+                                $("#picDump").prepend(celebDiv);
+
+
 
                             },
                             function (err) {
