@@ -2,7 +2,6 @@ $(document).ready(function() {
   $("#successful").hide();
   $("#actorDump").hide();
   $("#reset").hide();
-  $("#celebDiv").hide();
 });
 
 function reset() {
@@ -18,8 +17,7 @@ function hideStuff() {
   $("#successful").hide();
   $("#actorDump").hide();
   $("#reset").hide();
-  $("#celebDiv").hide();
-}
+ }
 
 //--------------------------------------------------------------------//
 // Initialize Firebase
