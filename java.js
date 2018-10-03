@@ -87,6 +87,11 @@ var uploadBar = fileButton.addEventListener("change", function(event) {
                   response.outputs[0].data.regions[0].data.face.identity
                     .concepts[0].name
               );
+              //push the name to the DB
+              database.ref().push({
+                name: response.outputs[0].data.regions[0].data.face.identity
+                .concepts[0].name,
+              });
 
               // Setting the src attribute of the image to a property pulled off the result item
               celebImg.attr("src", downloadURL);
