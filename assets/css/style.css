@@ -78,6 +78,7 @@ body {
     text-align: center;
 }
 
+
 @media only screen and (max-width: 600px) {
     .display-2 {
         position: absolute;
@@ -93,7 +94,9 @@ body {
         right: 0;
         width: 100%;
     }
-}
+    
+    
+   }
 
 @media only screen and (min-width: 600px) {
     .display-2 {
@@ -110,5 +113,25 @@ body {
         right: 0;
         width: 100%;
     }
-    
+   
+   
+}
+#dropdownMenuButton {
+    background-color: white;
+    color: black;
+    font-size: 40px;
+    font-family: 'Unica One', cursive; 
+    position: fixed;
+    right: 0px;
+    top: 5px;
+    border-style: double;
+    font-weight: 900;
+    min-width: 50px;
+}
+#dropdownMenuButton p {
+    display: none;
+    font-size: 12px;
+    font-family: 'Quicksand', sans-serif;
+   
+
 }
