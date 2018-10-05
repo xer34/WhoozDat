@@ -11,6 +11,7 @@ function reset() {
   $("#reset").hide();
   $("#fileButton").show();
   $("#uploader").show();
+  $("#add-image").show()
 }
 
 function hideStuff() {
@@ -40,6 +41,7 @@ var fileButton = document.getElementById("fileButton");
 
 //listen for file selection
 var uploadBar = fileButton.addEventListener("change", function(event) {
+  $("#add-image").hide()
   //get file
   var file = event.target.files[0];
   //create storage ref
@@ -99,11 +101,13 @@ var uploadBar = fileButton.addEventListener("change", function(event) {
               // Appending the paragraph and image tag to the div
               celebDiv.append(celebText);
               celebDiv.prepend(celebImg);
+              
               $("#successful").hide();
               $("#reset").show();
               // Prependng the div to the HTML page in the
               $("#picDump").prepend(celebDiv);
               $("#celebButton").append(celebDiv);
+
             },
             function(err) {
               // there was an error
