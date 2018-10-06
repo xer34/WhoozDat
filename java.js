@@ -2,6 +2,8 @@ $(document).ready(function() {
   $("#successful").hide();
   $("#actorDump").hide();
   $("#reset").hide();
+  $("#rotate").hide()
+  
 });
 
 function reset() {
@@ -39,8 +41,20 @@ const database = firebase.database();
 var uploader = document.getElementById("uploader");
 var fileButton = document.getElementById("fileButton");
 
+// on click, hide the placeholder image,
+$("#fileButton").on("click", function() {
+  $("#add-image").hide()
+  $("#rotate").show()
+})
+// display rotate gif, 
+//set timeout for a few seconds, 
+//then run firebase function
+
+
 //listen for file selection
 var uploadBar = fileButton.addEventListener("change", function(event) {
+
+   
   $("#add-image").hide()
   //get file
   var file = event.target.files[0];
@@ -49,6 +63,8 @@ var uploadBar = fileButton.addEventListener("change", function(event) {
   // upload file
   var task = storageRef.put(file);
   // upload progress bar
+
+
   task.on(
     "state_changed",
     // upload bar progress
