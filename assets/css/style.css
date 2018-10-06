@@ -185,4 +185,33 @@ body {
   #celeb-container {
     width: 100%;
   }
+
+#gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas:
+    "filmstripleft submitImage filmstripright";
+    height: 100vh;
+}
+
+#filmstripleft {
+    grid-area: filmstripleft;
+    background: url("assets/images/filmstip.png");
+    background-size: contain;
+    background-repeat: repeat-y;
+}
+#filmstripright {
+    grid-area: filmstripright;
+    background: url("assets/images/filmstip.png");
+    background-size: contain;
+    background-repeat: repeat-y;
+}
+
+#submitImage {
+    grid-area: submitImage;
+    background: url("assets/images/add-business-card-symbol.png");
+    background-size: contain;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
   

@@ -1,0 +1,118 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+} */
+
+#gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 600px;
+    grid-template-areas:
+    "navbar navbar navbar"
+    "filmstripleft submitImage filmstripright";
+    height: 100vh;
+}
+
+#navbar {
+    grid-area: navbar;
+    background: url("assets/images/pexels-photo-436413.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-style: ridge;
+    border-width: 25px;
+    border-color: gray;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    box-shadow: 10px 10px 20px 0 white inset, -10px -10px 20px 0 white inset;
+}
+
+.display {
+    background-color: white;
+    width: 50%;
+    border-style: double;
+    border-bottom: none;
+    font-size: 5em;
+    font-weight: 900;
+}
+
+#filmstripleft {
+    grid-area: filmstripleft;
+    background: url("assets/images/filmstip.png");
+    background-size: contain;
+    background-repeat: repeat-y;
+    animation: animatedBackground 5s linear infinite;
+}
+#filmstripright {
+    grid-area: filmstripright;
+    background: url("assets/images/filmstip.png");
+    background-size: contain;
+    background-repeat: repeat-y;
+    animation: animatedBackground 5s linear infinite;
+}
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 0 100%; }
+}
+
+#submitImage {
+    grid-area: submitImage;
+    background: url("assets/images/add-business-card-symbol.png");
+    background-size: contain;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+#dropdownMenuButton {
+    background: white;
+}
+
+#dropdownMenuButton p {
+    background: white;
+    display: none;
+    font-size: 18px;
+    font-family: "Quicksand", sans-serif;
+}
