@@ -18,7 +18,7 @@
 
     <div class="container-fluid" id="celeb-container">
         <div class="jumbotron celeb-image">
-            <h1 class="display">Whooz DaT</h1>
+            <h1 class="display" id='title' style='color:yellow'>Whooz D<span id="text-flicker-in-glow" style='color:yellow'>A</span>T</h1>
             <p class="display-2">A celebrity image search tool</p>
 
             <div id="dropdownMenuButton">?
@@ -35,16 +35,22 @@
                     <div class="card-header">Search by Face</div>
                     <div class="card-body">
                         <div align="center">
-                            <img id="add-image" src="assets/images/add-business-card-symbol.png" alt="add">
-                            <img id="rotate" src="assets/images/rotate.gif">
-                            <progress value="0" max="100" id="uploader">0%</progress>
-                            <input type="file" value="upload" id="fileButton" />
-                            <img src="assets/images/checkmark.gif" id="successful">
-                            <div id="celebDiv">
-                                <h1><span id="actorDump">Text Goes Here</span></h1>
-                                <div id="picDump"></div>
-                                <button type="button" id="reset" onclick="reset()">Try Another</button>
-                            </div>
+
+                            <label>File</lable>
+                                <input type="image" id="add-image" src="assets/images/add-business-card-symbol.png"
+                                    width="30px" />
+                                    <input type="file" value="upload" id="fileButton" style="display: none;"/>
+
+                                                   
+                                <img id="rotate" src="assets/images/rotate.gif">
+                                <progress value="0" max="100" id="uploader">0%</progress>
+                                
+                                <img src="assets/images/checkmark.gif" id="successful">
+                                <div id="celebDiv">
+                                    <h1><span id="actorDump">Text Goes Here</span></h1>
+                                    <div id="picDump"></div>
+                                    <button type="button" id="reset" onclick="reset()">Try Another</button>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -70,11 +76,11 @@
                             </div> -->
 
 
-                            <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
-                            <script src="https://code.jquery.com/jquery.js"></script>
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-                            <script src="java.js"></script>
-                            <script src="assets/javascript/app.js"></script>
+        <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+        <script src="java.js"></script>
+        <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>

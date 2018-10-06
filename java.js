@@ -2,8 +2,7 @@ $(document).ready(function() {
   $("#successful").hide();
   $("#actorDump").hide();
   $("#reset").hide();
-  $("#rotate").hide()
-  
+  $("#rotate").hide();
 });
 
 function reset() {
@@ -13,14 +12,14 @@ function reset() {
   $("#reset").hide();
   $("#fileButton").show();
   $("#uploader").show();
-  $("#add-image").show()
+  $("#add-image").show();
 }
 
 function hideStuff() {
   $("#successful").hide();
   $("#actorDump").hide();
   $("#reset").hide();
- }
+}
 
 //--------------------------------------------------------------------//
 // Initialize Firebase
@@ -42,20 +41,18 @@ var uploader = document.getElementById("uploader");
 var fileButton = document.getElementById("fileButton");
 
 // on click, hide the placeholder image,
-$("#fileButton").on("click", function() {
-  $("#add-image").hide()
-  $("#rotate").show()
-})
-// display rotate gif, 
-//set timeout for a few seconds, 
+$("input[type='image']").click(function() {
+  $("input[id='fileButton']").click();
+  $("#add-image").hide();
+  $("#rotate").show();
+});
+// display rotate gif,
+//set timeout for a few seconds,
 //then run firebase function
-
 
 //listen for file selection
 var uploadBar = fileButton.addEventListener("change", function(event) {
-
-   
-  $("#add-image").hide()
+  $("#add-image").hide();
   //get file
   var file = event.target.files[0];
   //create storage ref
@@ -63,7 +60,6 @@ var uploadBar = fileButton.addEventListener("change", function(event) {
   // upload file
   var task = storageRef.put(file);
   // upload progress bar
-
 
   task.on(
     "state_changed",
@@ -107,8 +103,9 @@ var uploadBar = fileButton.addEventListener("change", function(event) {
               );
               //push the name to the DB
               database.ref().push({
-                name: response.outputs[0].data.regions[0].data.face.identity
-                .concepts[0].name,
+                name:
+                  response.outputs[0].data.regions[0].data.face.identity
+                    .concepts[0].name
               });
 
               // Setting the src attribute of the image to a property pulled off the result item
@@ -117,13 +114,12 @@ var uploadBar = fileButton.addEventListener("change", function(event) {
               // Appending the paragraph and image tag to the div
               celebDiv.append(celebText);
               celebDiv.prepend(celebImg);
-              
+
               $("#successful").hide();
               $("#reset").show();
               // Prependng the div to the HTML page in the
               $("#picDump").prepend(celebDiv);
               $("#celebButton").append(celebDiv);
-
             },
             function(err) {
               // there was an error
