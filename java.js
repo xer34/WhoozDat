@@ -95,7 +95,7 @@ var uploadBar = fileButton.addEventListener("change", function(event) {
 
               // Creating and storing an image tag
               var celebImg = $("<img class='celebPic'>");
-              var celebText = $("<p>").text(
+              var celebText = $("<p class='celebtext'>").text(
                 "We are " +
                   (
                     response.outputs[0].data.regions[0].data.face.identity
