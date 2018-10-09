@@ -116,6 +116,7 @@ var uploadBar = fileButton.addEventListener("change", function(event) {
               celebDiv.prepend(celebImg);
 
               $("#successful").hide();
+              $("#rotate").hide()
               $("#reset").show();
               // Prependng the div to the HTML page in the
               $("#picDump").prepend(celebDiv);
