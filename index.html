@@ -16,31 +16,35 @@
 
 <body>
 
-    <div class="container-fluid" id="celeb-container">
+    <div class="container-fluid" id="celeb-container" class="grid-container">
         <div class="jumbotron celeb-image">
             <h1 class="display" id='title' style='color:yellow'>Whooz D<span id="text-flicker-in-glow" style='color:yellow'>A</span>T</h1>
             <p class="display-2">A celebrity image search tool</p>
 
             <div id="dropdownMenuButton">?
-                <p>Are you at the movies and unsure about who the actor is that you're seeing on the screen?</p>
+                <p>Are you at the movies and want to know the name of the actor you're seeing on the screen?</p>
                 <p>With <span class="bold">Whooz Dat</span>, you can simply click the plus button below to upload an
                     image and search by face!</p>
             </div>
+            
         </div>
 
+            
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <div class="card-header">Search by Face</div>
-                    <div class="card-body">
+                    
+                    <div class="card-body" id="uploadImage">
                         <div align="center">
-
-                            <label>File</lable>
+                        <div class="grid-item"><br></div>
+                        <div class="grid-item"><br></div>
+            
                                 <input type="image" id="add-image" src="assets/images/add-business-card-symbol.png"
                                     width="30px" />
+                                    
                                     <input type="file" value="upload" id="fileButton" style="display: none;"/>
-
+                            
                                                    
                                 <img id="rotate" src="assets/images/rotate.gif">
                                 <progress value="0" max="100" id="uploader">0%</progress>
@@ -49,13 +53,32 @@
                                 <div id="celebDiv">
                                     <h1><span id="actorDump">Text Goes Here</span></h1>
                                     <div id="picDump"></div>
-                                    <button type="button" id="reset" onclick="reset()">Try Another</button>
+                                    <div id="results">
+                                        <div id="actor"></div>
+                                        <div id="Also"></div>
+                                        <div id="posters">
+                                            
+                                            <div id="movie1"></div>
+                                            <div id="movie2"></div>
+                                            <div id="movie3"></div>
+                                        </div>
+                                    </div>
+                                    <button type="button" id="reset" onclick="reset()">Try Another</button> 
+                                    <div class="grid-item"><br></div>
+                                    <div class="grid-item"><br></div>
+                                    <div class="grid-item"><br></div>
+                                    <div class="grid-item"><br></div>  
+   
                                 </div>
                         </div>
                     </div>
                 </div>
             </div>
+        
         </div>
+   
+ 
+    </div>
         <!-- <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
