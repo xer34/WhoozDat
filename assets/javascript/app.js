@@ -105,9 +105,10 @@ $(document).ready(function() {
 
         var actorID = response.results[0].id
         // Populates the #celebDiv
-        // var celebCard = $("<div id=")
-        $("#celebDiv").append($("<img class='celebPic'>").attr("src", downloadURL));
-        $("#celebDiv").append($("<p>").text("We are " + percentConfidence + "% sure it's " + response.results[0].name))
+        var celebCard = $("<div id=#celebCard>")
+        celebCard.append($("<img class='celebPic'>").attr("src", downloadURL));
+        celebCard.append($("<h3>").text("We are " + percentConfidence + "% sure it's " + response.results[0].name))
+        $("#celebDiv").append(celebCard)
         $("#celebDiv").append($("<p>").text("Also seen in: "))
         $("#celebDiv").append($("<div id='movies'>"))
         $("#celebDiv").append($("<button id='reset'>Try Another</button>"))
@@ -116,7 +117,7 @@ $(document).ready(function() {
         for (let i = 0; i < response.results[0].known_for.length; i++) {
             var movie = $("<div class='movie'>")
             movie.append($("<img class='poster'>").attr("src", "http://image.tmdb.org/t/p/w185/" + response.results[0].known_for[i].poster_path))
-            movie.append($("<p>").text(response.results[0].known_for[i].original_title))
+            movie.append($("<h3>").text(response.results[0].known_for[i].original_title))
             movie.append($("<p>").attr("id", "character" + i))
                 // Makes another API call to look up what character they played in each movie
             function getCharacter(i){
