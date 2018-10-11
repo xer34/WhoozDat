@@ -1,13 +1,16 @@
 $(document).ready(function() {
 
+    // Toggle for dropdown info
     $("#dropdownMenuButton").on("click", function (){
         $(this).children().slideToggle()
     });
 
+    // Event listener for reset button
     $("body").on("click", "#reset", function(){
         reset()
     })
   
+    // Resets page to upload screen
     function reset() {
         $("#celebDiv").empty()
         $("#addImage").show()
@@ -32,7 +35,7 @@ $(document).ready(function() {
   var progressBar = document.getElementById("progressBar");
   var fileButton = document.getElementById("fileButton");
 
-  //listen for file selection
+  //listen for file selection, this triggers whole chain of searches and page modification
   fileButton.addEventListener("change", function(event) {
 
     $("#addImage").hide();
@@ -50,8 +53,8 @@ $(document).ready(function() {
       "state_changed",
       // upload bar progress
       function progress(snapshot) {
-        var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        progressBar.value = percentage;
+        // var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        // progressBar.value = percentage;
       },
   
       function error(err) {},
@@ -86,13 +89,12 @@ $(document).ready(function() {
                 // Creating a variable for the actor's name so it can be used to plug into the movie api
                 var name =  response.outputs[0].data.regions[0].data.face.identity
                 .concepts[0].name
-                console.log(name);
+                // console.log(name);
 
             
             // Add actor name into actor search here:
   var actor = encodeURIComponent(name);
   var queryURL = "https://api.themoviedb.org/3/search/person?api_key=ce8d1bbc9cd5bd4134a54d0e77251a02&query=" + actor + "&language=en-US&page=1&include_adult=false"
-  var character = ""
   
 //   Makes TMDB API call looking for actor info
     $.ajax({
@@ -102,7 +104,8 @@ $(document).ready(function() {
         // console.log(response);
 
         var actorID = response.results[0].id
-        // Puts the uploaded picture into #celebDiv
+        // Populates the #celebDiv
+        // var celebCard = $("<div id=")
         $("#celebDiv").append($("<img class='celebPic'>").attr("src", downloadURL));
         $("#celebDiv").append($("<p>").text("We are " + percentConfidence + "% sure it's " + response.results[0].name))
         $("#celebDiv").append($("<p>").text("Also seen in: "))
@@ -112,7 +115,7 @@ $(document).ready(function() {
         // Goes through each 'known_for' movie and makes a card
         for (let i = 0; i < response.results[0].known_for.length; i++) {
             var movie = $("<div class='movie'>")
-            movie.append($("<img class='poster'>").attr("src", "http://image.tmdb.org/t/p/w92/" + response.results[0].known_for[i].poster_path))
+            movie.append($("<img class='poster'>").attr("src", "http://image.tmdb.org/t/p/w185/" + response.results[0].known_for[i].poster_path))
             movie.append($("<p>").text(response.results[0].known_for[i].original_title))
             movie.append($("<p>").attr("id", "character" + i))
                 // Makes another API call to look up what character they played in each movie
@@ -151,7 +154,7 @@ $(document).ready(function() {
       $("#progressBar").hide();
       $("#fileButton").hide();
       $("#successful").show();
-      progressBar.value = 0;
+    //   progressBar.value = 0;
     }
   });
                 
