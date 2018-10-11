@@ -257,7 +257,11 @@ button {
   padding: 5px;
 }
 
-.posters {
+h3 {
+    font-family: "Quicksand", sans-serif;
+}
+
+#celebCard {
     border-radius: 15px;
     border-style: groove;
     border-color: darkblue;
