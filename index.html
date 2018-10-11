@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Whooz Dat?</title>
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -17,6 +16,7 @@
 <body>
 
     <div id="gridContainer">
+
         <header>
             <div class="jumbotron headerImage">
                 <h1 class="display" id='title'>Whooz D<span id="text-flicker-in-glow">A</span>T</h1>
@@ -24,31 +24,32 @@
 
                 <div id="dropdownMenuButton">?
                     <p>Are you at the movies and want to know the name of the actor you're seeing on the screen?</p>
-                    <p>With <b>Whooz Dat</b>, you can simply press the plus button below to upload an
+                    <p>With <b>Whooz Dat</b>, you can simply press the phone symbol below to upload an
                         image and search by face!</p>
                 </div>
             </div>
         </header>
     
+        <!-- Left decorative filmstrip -->
         <div id="filmstripLeft"></div>
+
+        <!-- Content area -->
         <div id="contentStage">
 
+            <!-- The upload screen -->
             <label id="addImage">Press To Upload: Remember To Take Your Picture In Landscape Mode!
                 <input id="fileButton" type="file" accept="image/*" capture="camera" value="upload">
             </label>
 
-
-            <!-- <div id="rotate">Take Your Picture In Landscape Mode!</div> -->
-            <progress value="0" max="100" id="progressBar">0%</progress>
+            <!-- Progress bar and completed gif -->
+            <!-- <progress value="0" max="100" id="progressBar">0%</progress> -->
             <img src="assets/images/checkmark.gif" id="successful">
 
-            <div id="celebDiv">
-                    
-                <!-- </div> -->
-                <!-- <button type="button" id="reset" onclick="reset()">Try Another</button> -->
-            </div>
+            <!-- The Results screen -->
+            <div id="celebDiv"></div>
 
         </div>
+        <!-- Right decorative filmstrip -->
         <div id="filmstripRight"></div>
     </div>
 
@@ -56,7 +57,6 @@
         <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
         <script src="https://code.jquery.com/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-        <!-- <script src="java.js"></script> -->
         <script src="assets/javascript/app.js"></script>
 </body>
 

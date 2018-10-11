@@ -214,18 +214,6 @@ button {
  
 }
 
-.celebtext p {
-  padding: 5px;
-  height: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  text-align: center;
-  font-size: 20px;
-  font-family: "Quicksand", sans-serif;
-}
-
 #dropdownMenuButton {
   background-color: white;
   color: black;
@@ -244,16 +232,7 @@ button {
   font-family: "Quicksand", sans-serif;
   margin: 3px;
 }
-#uploader {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 35%;
-  margin-bottom: 10px;
-}
-#celeb-container {
-  width: 100%;
-  padding: 0;
-}
+
 #text-flicker-in-glow {
   -webkit-animation: text-flicker-in-glow 4s linear both;
   animation: text-flicker-in-glow 4s linear both;
@@ -268,7 +247,6 @@ button {
   padding: 2px;
   background:white; 
   margin-top: 5px;
-  
 }
 .celebPic  {
   border-radius: 5px;
@@ -280,18 +258,16 @@ button {
 }
 
 .posters {
-  border-radius: 15px;
-  border-style: groove;
-  border-color: darkblue;
-  padding: 5px;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 5px;
-  justify-content: left;
-  padding-top: 5px;
-  
+    border-radius: 15px;
+    border-style: groove;
+    border-color: darkblue;
+    padding: 5px;
+    margin-top: 5px;
+    justify-content: left;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+    background-color: lightslategray;
 }
 
 .movie {
@@ -312,9 +288,9 @@ button {
   height: auto; 
   border-radius: 15px;
 }
- #rotate img{
+ /* #rotate img{
   width: 100%;
-}
+} */
 
 
 
