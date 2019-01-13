@@ -1,8 +1,3 @@
-# group5TuesThurs
-
-#Project Title
-who dat is?
-
 #Description
 A facial recognition web app that allows users to upload a picture of an actor in a movie they are watching, and recieve the name of the actor and other movies they have been in.
 
